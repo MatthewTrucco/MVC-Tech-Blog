@@ -1,0 +1,30 @@
+{{#each comments as |comment|}}
+    <article class="comment">
+        <header class="comment-header">
+            <h3>{{comment.author}}</h3>
+            <time datetime="{{comment.createdAt}}">
+                {{formatDate comment.createdAt}}
+            </time>
+        </header>
+        <section class="comment-content">
+            <p>{{comment.content}}</p>
+        </section>
+        {{#if isOwner comment.authorId}}
+            <footer class="comment-footer">
+                <button class="delete-comment" data-id="{{comment.id}}">Delete</button>
+            </footer>
+        {{/if}}
+    </article>
+{{else}}
+    <p>No comments yet.</p>
+{{/each}}
+
+{{!-- If the user is logged in, show the add comment form --}}
+{{#if loggedIn}}
+    <form id="new-comment-form" action="/posts/{{postId}}/comments" method="POST">
+        <textarea name="comment" placeholder="Write your comment here..." required></textarea>
+        <button type="submit">Add Comment</button>
+    </form>
+{{else}}
+    <p>You must be logged in to comment. <a href="/login">Log in here.</a></p>
+{{/if}}

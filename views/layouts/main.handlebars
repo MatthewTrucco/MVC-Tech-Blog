@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blog</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <div class="nav-brand">The Tech Blog</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                {{#if loggedIn}}
+                <li><a href="/logout">Logout</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main content area where page-specific content will be injected -->
+    <main>
+        {{{body}}}
+    </main>
+    
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    <!-- Link to your client-side JavaScript file -->
+    <script src="/javascript/app.js"></script>
+</body>
+</html>

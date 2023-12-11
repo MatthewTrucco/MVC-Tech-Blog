@@ -1,0 +1,25 @@
+{{> header}}
+
+<main class="single-post-container">
+    <article class="post">
+        <h1 class="post-title">{{post.title}}</h1>
+        <div class="post-meta">
+            Posted by {{post.author}} on {{formatDate post.createdAt}}
+        </div>
+        <section class="post-content">
+            {{post.content}}
+        </section>
+
+        {{#if ownPost}}
+            <div class="post-actions">
+                <a href="/posts/{{post.id}}/edit" class="button">Edit Post</a>
+                <button type="button" class="button delete-post" data-id="{{post.id}}">Delete Post</button>
+            </div>
+        {{/if}}
+    </article>
+
+    
+    {{> comments comments=post.comments}}
+</main>
+
+{{> footer}} 

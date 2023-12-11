@@ -1,0 +1,22 @@
+{{> header}} 
+
+<main class="homepage">
+    <h1>Welcome to The Tech Blog</h1>
+    
+    {{#if posts.length}}
+        <section class="recent-posts">
+            <h2>Recent Posts</h2>
+            {{#each posts}}
+                <article class="post-preview">
+                    <h3><a href="/posts/{{this.id}}">{{this.title}}</a></h3>
+                    <p class="post-intro">{{truncate this.summary 200}}</p>
+                    <p class="post-meta">Posted by {{this.author}} on {{formatDate this.createdAt}}</p>
+                </article>
+            {{/each}}
+        </section>
+    {{else}}
+        <p>No posts to display.</p>
+    {{/if}}
+</main>
+
+{{> footer}}

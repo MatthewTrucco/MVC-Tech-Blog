@@ -1,0 +1,45 @@
+{{> header}}
+
+<main class="signup-container">
+    <h1>Create an Account</h1>
+
+    {{#if signupErrors}}
+        <div class="alert alert-danger" role="alert">
+            {{#each signupErrors}}
+                <p>{{this.message}}</p>
+            {{/each}}
+        </div>
+    {{/if}}
+
+    <form id="signup-form" action="/signup" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password-confirm">Confirm Password</label>
+            <input type="password" id="password-confirm" name="password-confirm" placeholder="Confirm your password" required>
+        </div>
+
+        <div class="form-group form-group-btn">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+
+        <p class="login-help">
+            Already have an account? <a href="/login">Log in here</a>.
+        </p>
+    </form>
+</main>
+
+{{> footer}}

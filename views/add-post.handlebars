@@ -1,0 +1,23 @@
+<h1>Create a New Post</h1>
+
+{{#if errors}}
+    <div class="errors">
+        {{#each errors}}
+            <p>{{this.message}}</p>
+        {{/each}}
+    </div>
+{{/if}}
+
+<form id="new-post-form" action="/posts/create" method="POST">
+    <div class="form-group">
+        <label for="post-title">Title</label>
+        <input type="text" id="post-title" name="title" placeholder="Enter post title" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="post-content">Content</label>
+        <textarea id="post-content" name="content" rows="10" placeholder="Write your post content here..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Publish Post</button>
+</form>

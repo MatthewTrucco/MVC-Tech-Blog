@@ -1,0 +1,20 @@
+<h1>Dashboard</h1>
+
+{{#if posts.length}}
+    <div class="user-posts">
+        <h2>Your Posts</h2>
+        {{#each posts}}
+            <div class="post">
+                <h3 class="post-title">{{this.title}}</h3>
+                <p class="post-date">Posted on {{formatDate this.createdAt}}</p>
+                <p class="post-summary">{{truncate this.content 150}}</p>
+                <a href="/posts/{{this.id}}/edit" class="button edit-button">Edit</a>
+                <button type="button" class="button delete-button" data-id="{{this.id}}">Delete</button>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <p>You have not created any posts yet.</p>
+{{/if}}
+
+<a href="/posts/new" class="button new-post-button">Create New Post</a>
