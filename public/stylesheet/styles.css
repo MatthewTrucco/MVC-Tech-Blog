@@ -1,114 +1,93 @@
-/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
+    line-height: 1.6;
 }
 
-/* Container */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Header */
 header {
     background: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
-/* Navigation Bar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-
-nav a {
-    color: #fff;
+header a {
+    color: #ffd700; /* gold color for the links to mimic the highlight */
     text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-/* Main Content and Articles */
-main {
-    padding: 20px;
+header a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
     background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-article.post {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+.article-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-/* Forms and Buttons */
-form {
-    margin-top: 20px;
+.article-body {
+    margin-top: 10px;
+    text-align: justify;
 }
 
-form .form-group {
-    margin-bottom: 20px;
+.article-footer {
+    color: #555;
+    font-style: italic;
+    text-align: right;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    margin-top: 10px;
 }
 
-form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form .form-group input[type='text'],
-form .form-group input[type='email'],
-form .form-group input[type='password'],
-form .form-group textarea {
-    width: 100%;
+/* Highlighted elements like buttons or special areas */
+.highlight {
+    background-color: #ffd700; /* gold color */
+    color: #333;
     padding: 10px;
-    border: 1px solid #ddd;
-}
-
-button, .button {
+    margin: 10px 0;
     display: inline-block;
-    background: #333;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
     border: none;
     cursor: pointer;
 }
 
-button:hover, .button:hover {
-    background: #555;
+.highlight:hover {
+    background-color: #f0e68c; /* lighter gold */
 }
 
 /* Footer */
 footer {
+    text-align: center;
+    padding: 10px 0;
     background: #333;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Utility Classes */
-.alert {
-    padding: 10px;
-    background: red;
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    nav {
-        flex-direction: column;
-    }
+footer p {
+    margin: 0;
 }

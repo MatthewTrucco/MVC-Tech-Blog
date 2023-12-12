@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 const router = express.Router();
 
-router.get('/dashboard/dashboard', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         
         const userData = await User.findByPk(req.session.userId, {
@@ -23,7 +23,7 @@ router.get('/dashboard/dashboard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/dashboard/dashboard/edit/:id', withAuth, async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
 
